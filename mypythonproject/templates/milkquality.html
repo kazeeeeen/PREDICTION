@@ -1,0 +1,177 @@
+{% load static %}
+
+{{ '<' }}{{ '!DOCTYPE html>' }}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.cs
+s" integrity="sha384-
+JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+crossorigin="anonymous">
+    <title>Milk Quality Prediction</title>
+    <style type = text/css>
+        body{
+        background-image:url("{% static 'milkqualityprediction\images\white.jpg'%}")
+        }
+        .main{
+        position:fixed;
+        top:70px;
+        left:800px;
+        width:550px;
+        background-color:#ffc0cb;
+        border-radius:10px;
+        align-items:center;
+        padding:5%;
+        }
+        .exp{
+        position:fixed;
+        top:20px;
+        left:140px;
+        width:550px;
+        background-color:#ffc0cb;
+        border-radius:10px;
+        align-items:center;
+        padding:5%;
+        }
+        h1{
+        color: 'white'
+        font-family: arial, sans-serif;
+        font-size:30px;
+        font-weight: bold;
+        }
+        h2{
+        color: 'white'
+        font-family: arial, sans-serif;
+        font-size:20px;
+        font-weight: thin;
+        }
+        h3{
+        color: 'white'
+        font-family: cursive;
+        font-family: Lucida Handwriting;
+        font-size:20px;
+        font-weight: bold;
+        }
+        p{
+        font-family: arial, sans-serif;
+        font-size:14px;
+        }
+
+        input[type=submit]{
+        appearance: button;
+        background-color: #cd5c5c;
+        border: solid transparent;
+        border-radius: 16px;
+        border-width: 0 0 4px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: din-round,sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: .8px;
+        line-height: 20px;
+        margin: 10px;
+        outline: none;
+        overflow: visible;
+        padding: 13px 16px;
+        text-align: center;
+        text-transform: uppercase;
+        touch-action: manipulation;
+        transform: translateZ(0);
+        transition: filter .2s;
+        user-select: none;
+        -webkit-user-select: none;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: 25%;
+        }
+        .exp,table{
+        border: 2px solid black;
+        }
+        .main,table{
+        border: 0px solid black;
+        }
+        .main{
+        border: 2px solid black;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div class = "exp">
+    <h3>Data Understanding-Milk Quality</h3>
+
+    <table>
+        <p>This dataset helps us to build machine learning
+models to predict the quality of milk. <br> This dataset consists of 7 independent variables ie pH, Temperature, Taste, Odor, Fat,
+Turbidity, and Color.<br>Defining each columns:<br>
+• pH - defines PH alus of the milk which ranges from 3 to 9.5 max : 6.25 to 6.90<br>
+• Temperature - defines Temprature of the milk which ranges from 34'C to 90'C max :
+34'C to 45.20'C<br>
+• Taste - defines Taste of the milk which is categorical data 0 (Bad) or 1 (Good) max :
+1 (Good)<br>
+• Odor - defines Odor of the milk which is categorical data 0 (Bad) or 1 (Good) max : 0
+(Bad)<br>
+• Fat - defines Fat of the milk which is categorical data 0 (Low) or 1 (High) max : 1
+(High)<br>
+• Turbidity - defines Turbidity of the milk which is categorical data 0 (Low) or 1
+(High) max : 1 (High)<br>
+• Colour - defines Colour of the milk which ranges from 240 to 255 max : 255<br>
+• Grade - defines Grade (Target) of the milk which is categorical data Where Low
+(Bad) or Medium (Moderate) High</p>
+    </table>
+
+</div>
+
+<div align ='center' class ="main">
+    <h1>Milk Quality Prediction</h1>
+    <h2>Enter the following information needed:</h2>
+    <form action = "result">
+        <table>
+            <tr>
+                <td align="right"> pH:</td>
+                <td aligh="left"><input type="text" name="n1"></td>
+            </tr>
+            <tr>
+                <td align="right"> Temperature:</td>
+                <td aligh="left"><input type="text" name="n2"></td>
+            </tr>
+            <tr>
+                <td align="right"> Taste:</td>
+                <td aligh="left"><input type="text" name="n3"></td>
+            </tr>
+            <tr>
+                <td align="right"> Odor:</td>
+                <td aligh="left"><input type="text" name="n4"></td>
+            </tr>
+            <tr>
+                <td align="right"> Fat:</td>
+                <td aligh="left"><input type="text" name="n5"></td>
+            </tr>
+            <tr>
+                <td align="right"> Turbidity:</td>
+                <td aligh="left"><input type="text" name="n6"></td>
+            </tr>
+            <tr>
+                <td align="right"> Colour:</td>
+                <td aligh="left"><input type="text" name="n7"></td>
+            </tr>
+        </table>
+        <input type ="submit">
+
+    </form>
+    The milk quality is:{{result2}}
+
+
+</div>
+</body>
+</html>
